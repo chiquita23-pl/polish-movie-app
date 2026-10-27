@@ -192,6 +192,10 @@ function showForm() {
       </div>
     </div>
     <div class="movie-actions-list-wrapper">
+      Total Movies: {{ movies.length }} / Avarage Rating: {{
+        movies.reduce((acc, movie) => acc + (movie.rating || 0), 0) /
+          movies.length || 0
+      }}
       <div class="flex-spacer"></div>
       <div class="movie-actions-list-actions">
         <button
