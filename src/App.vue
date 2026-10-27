@@ -5,6 +5,7 @@ import { reactive, ref } from "vue";
  otherwise you could just use a simple ⭐️ emoji, or * character.
 */
 import { StarIcon } from "@heroicons/vue/24/solid";
+import { TrashIcon } from "@heroicons/vue/24/solid";
 import { items } from "./movies.json";
 
 const movies = ref(items);
@@ -75,6 +76,10 @@ function addMovie() {
     movies.value.push(movie);
     hideForm();
   }
+}
+
+function removeMovie(movieIndex) {
+  movies.value.splice(movieIndex, 1);
 }
 
 function cleanUpForm() {
@@ -265,6 +270,14 @@ function showForm() {
                 <StarIcon class="movie-item-star-icon" />
               </button>
             </div>
+          </div>
+          <div class="delete-wrapper">
+            <button
+              class="delete-button"
+              @click="removeMovie(movieIndex)"
+            >
+              <TrashIcon class="delete-icon" />
+            </button>
           </div>
         </div>
       </div>

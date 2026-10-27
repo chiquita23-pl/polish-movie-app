@@ -154,3 +154,15 @@
 .flex-spacer {
     @apply w-full flex-1;
 }
+
+.delete-wrapper {
+    @apply w-full flex items-center justify-end h-8 shrink-0;
+}
+
+.delete-button {
+    @apply rounded-md;
+}
+
+.delete-icon {
+    @apply h-5 w-5 text-red-500 hover:text-red-400;
+}
